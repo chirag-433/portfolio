@@ -175,7 +175,7 @@ export const DATA = {
       dates: "2026",
       location: "Finalist · Round 2",
       description: "Selected to advance to Round 2 of the Altaria Hackathon.",
-      image: "",
+      image: "/achievements/altaria.jpg",
       links: [] as { href: string; icon: React.ReactNode; title: string }[],
     },
     {
@@ -183,7 +183,7 @@ export const DATA = {
       dates: "2026",
       location: "11th place · 60+ teams",
       description: "Placed 11th among more than 60 teams.",
-      image: "",
+      image: "/achievements/triada-ctf.jpg",
       links: [] as { href: string; icon: React.ReactNode; title: string }[],
     },
     {
@@ -191,7 +191,7 @@ export const DATA = {
       dates: "2026",
       location: "Student Community of the Year",
       description: "Point Blank was recognized as Student Community of the Year.",
-      image: "",
+      image: "https://files.fossunited.org/IndiaFOSS%202026%20/%20Brand%20Assets/IndiaFOSS-2026-logo-white.svg",
       links: [] as { href: string; icon: React.ReactNode; title: string }[],
     },
   ],
