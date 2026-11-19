@@ -176,7 +176,7 @@ export const DATA = {
       location: "Finalist · Round 2",
       description: "Selected to advance to Round 2 of the Altaria Hackathon.",
       image: "",
-      links: [],
+      links: [] as { href: string; icon: React.ReactNode; title: string }[],
     },
     {
       title: "Triada CTF",
@@ -184,7 +184,7 @@ export const DATA = {
       location: "11th place · 60+ teams",
       description: "Placed 11th among more than 60 teams.",
       image: "",
-      links: [],
+      links: [] as { href: string; icon: React.ReactNode; title: string }[],
     },
     {
       title: "IndiaFOSS 2026",
@@ -192,7 +192,7 @@ export const DATA = {
       location: "Student Community of the Year",
       description: "Point Blank was recognized as Student Community of the Year.",
       image: "",
-      links: [],
+      links: [] as { href: string; icon: React.ReactNode; title: string }[],
     },
   ],
 } as const;
