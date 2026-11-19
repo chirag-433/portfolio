@@ -9,7 +9,7 @@ import ContactSection from "@/components/section/contact-section";
 import HackathonsSection from "@/components/section/hackathons-section";
 import ProjectsSection from "@/components/section/projects-section";
 import WorkSection from "@/components/section/work-section";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, FileText } from "lucide-react";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -31,6 +31,23 @@ export default function Page() {
                 delay={BLUR_FADE_DELAY}
                 text={DATA.description}
               />
+              <div className="mt-3 flex flex-wrap gap-3">
+                <Link
+                  href="/Chirag_Anand_Resume.pdf"
+                  target="_blank"
+                  className="inline-flex items-center gap-2 rounded-lg border bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
+                >
+                  <FileText className="size-4" />
+                  View resume
+                </Link>
+                <Link
+                  href={`mailto:${DATA.contact.email}`}
+                  className="inline-flex items-center gap-2 rounded-lg border px-4 py-2 text-sm font-medium transition-colors hover:bg-muted"
+                >
+                  Get in touch
+                  <ArrowUpRight className="size-4" />
+                </Link>
+              </div>
             </div>
             <BlurFade delay={BLUR_FADE_DELAY} className="order-1 md:order-2">
               <Avatar className="size-24 md:size-32 border rounded-full shadow-lg ring-4 ring-muted">
@@ -58,7 +75,7 @@ export default function Page() {
       <section id="work">
         <div className="flex min-h-0 flex-col gap-y-6">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
-            <h2 className="text-xl font-bold">Work Experience</h2>
+            <h2 className="text-xl font-bold">Open Source & Community</h2>
           </BlurFade>
           <BlurFade delay={BLUR_FADE_DELAY * 6}>
             <WorkSection />
@@ -87,7 +104,7 @@ export default function Page() {
                       <img
                         src={education.logoUrl}
                         alt={education.school}
-                        className="size-8 md:size-10 p-1 border rounded-full shadow ring-2 ring-border overflow-hidden object-contain flex-none"
+                        className={`size-8 md:size-10 p-1 border rounded-full shadow ring-2 ring-border overflow-hidden flex-none ${education.logoCrop ? "object-cover object-left" : "object-contain"}`}
                       />
                     ) : (
                       <div className="size-8 md:size-10 p-1 border rounded-full shadow ring-2 ring-border bg-muted flex-none" />
@@ -124,6 +141,23 @@ export default function Page() {
                 <div className="border bg-background border-border ring-2 ring-border/20 rounded-xl h-8 w-fit px-4 flex items-center gap-2">
                   {skill.icon && <skill.icon className="size-4 rounded overflow-hidden object-contain" />}
                   <span className="text-foreground text-sm font-medium">{skill.name}</span>
+                </div>
+              </BlurFade>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section id="competitive-programming">
+        <div className="flex min-h-0 flex-col gap-y-4">
+          <BlurFade delay={BLUR_FADE_DELAY * 10}>
+            <h2 className="text-xl font-bold">Competitive Programming</h2>
+          </BlurFade>
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+            {DATA.competitiveProgramming.map((stat, index) => (
+              <BlurFade key={stat.label} delay={BLUR_FADE_DELAY * 10 + index * 0.05}>
+                <div className="h-full rounded-xl border bg-card p-4">
+                  <p className="font-semibold">{stat.label}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{stat.value}</p>
                 </div>
               </BlurFade>
             ))}

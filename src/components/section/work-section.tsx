@@ -11,7 +11,7 @@ import { DATA } from "@/data/resume";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-function LogoImage({ src, alt }: { src: string; alt: string }) {
+function LogoImage({ src, alt, wide }: { src?: string; alt: string; wide?: boolean }) {
   const [imageError, setImageError] = useState(false);
 
   if (!src || imageError) {
@@ -20,14 +20,15 @@ function LogoImage({ src, alt }: { src: string; alt: string }) {
     );
   }
 
-  return (
-    <img
-      src={src}
-      alt={alt}
-      className="size-8 md:size-10 p-1 border rounded-full shadow ring-2 ring-border overflow-hidden object-contain flex-none"
-      onError={() => setImageError(true)}
-    />
-  );
+  if (wide) {
+    return (
+      <div className="h-8 w-16 md:h-10 md:w-20 p-1.5 border rounded-lg shadow ring-2 ring-border bg-zinc-900 flex items-center justify-center flex-none">
+        <img src={src} alt={alt} className="max-h-full max-w-full object-contain" onError={() => setImageError(true)} />
+      </div>
+    );
+  }
+
+  return <img src={src} alt={alt} className="size-8 md:size-10 p-1 border rounded-full shadow ring-2 ring-border overflow-hidden object-contain flex-none" onError={() => setImageError(true)} />;
 }
 
 export default function WorkSection() {
@@ -42,7 +43,7 @@ export default function WorkSection() {
           <AccordionTrigger className="hover:no-underline p-0 cursor-pointer transition-colors rounded-none group [&>svg]:hidden">
             <div className="flex items-center gap-x-3 justify-between w-full text-left">
               <div className="flex items-center gap-x-3 flex-1 min-w-0">
-                <LogoImage src={work.logoUrl} alt={work.company} />
+                <LogoImage src={work.logoUrl} alt={work.company} wide={work.logoWide} />
                 <div className="flex-1 min-w-0 gap-0.5 flex flex-col">
                   <div className="font-semibold leading-none flex items-center gap-2">
                     {work.company}
