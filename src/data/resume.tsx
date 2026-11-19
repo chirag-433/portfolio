@@ -15,7 +15,7 @@ export const DATA = {
   locationLink: "https://maps.google.com/?q=Bengaluru,India",
   description: "Full-stack developer and competitive programmer.",
   summary:
-    "Hi, I'm Chirag Anand, a computer science student interested in full-stack development and competitive programming. I enjoy building practical tools and web applications, and contributing to open-source projects. I'm studying Computer Science Engineering (Data Science) at Dayananda Sagar College of Engineering, where I maintain a 9.2 CGPA. I'm also a member of Point Blank, a student-run technology club recognized as **Student Community of the Year at IndiaFOSS 2026**.",
+    "I'm Chirag Anand, a full-stack engineer who builds web applications and developer tools from interface to backend. My projects include PsychEdge, a trading analytics platform with live market data and AI-generated signals; gocli, a concurrent Go tool for monitoring APIs and websites; and a Python CLI for GitHub repository insights. I enjoy building end-to-end features, working with APIs and real-time data, and contributing to open source. I'm also part of Point Blank, recognized as **Student Community of the Year at IndiaFOSS 2026**.",
   avatarUrl: "/chirag-anand.jpg",
   skills: [
     { name: "Go", icon: Golang },
