@@ -191,7 +191,7 @@ export const DATA = {
       dates: "2026",
       location: "Student Community of the Year",
       description: "Point Blank was recognized as Student Community of the Year.",
-      image: "https://files.fossunited.org/IndiaFOSS%202026%20/%20Brand%20Assets/IndiaFOSS-2026-logo-white.svg",
+      image: "/achievements/indiafoss-2026.png",
       links: [] as { href: string; icon: React.ReactNode; title: string }[],
     },
   ],
